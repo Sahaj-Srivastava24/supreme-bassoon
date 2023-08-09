@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 
 import Layout from '@/lib/components/layout';
 import { fontSans } from '@/lib/styles/fonts';
-import { cn } from '@/lib/utils';
+import cn from '@/lib/utils/tw-merge';
 
 import '@/lib/styles/globals.css';
 

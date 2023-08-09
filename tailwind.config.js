@@ -17,6 +17,9 @@ module.exports = {
     },
     extend: {
       colors: {
+        C31327A: '#31327A',
+        CBED8DE: '#BED8DE',
+        CE6F8FC: '#E6F8FC',
         border: 'hsl(var(--border))',
         input: 'hsl(var(--input))',
         ring: 'hsl(var(--ring))',
