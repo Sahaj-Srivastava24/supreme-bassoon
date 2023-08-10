@@ -1,4 +1,5 @@
 const { fontFamily } = require('tailwindcss/defaultTheme');
+const { blackA, violet, mauve } = require('@radix-ui/colors');
 
 /** @type {import('tailwindcss').Config} */
 module.exports = {
@@ -17,6 +18,9 @@ module.exports = {
     },
     extend: {
       colors: {
+        ...blackA,
+        ...violet,
+        ...mauve,
         C31327A: '#31327A',
         CBED8DE: '#BED8DE',
         CE6F8FC: '#E6F8FC',

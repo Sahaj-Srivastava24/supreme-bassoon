@@ -1,13 +1,12 @@
 'use client';
 
 import type { NextPage } from 'next';
-import Link from 'next/link';
 import { useState } from 'react';
 import * as Form from '@radix-ui/react-form';
-import * as Separator from '@radix-ui/react-separator';
 
-const Login: NextPage = () => {
+const Signup: NextPage = () => {
   const [username, setUsername] = useState('');
+  const [mail, setMail] = useState('');
   const [password, setPassword] = useState('');
 
   const handleSubmit = () => {};
@@ -15,8 +14,36 @@ const Login: NextPage = () => {
   return (
     <article className="flex flex-col items-center w-full min-w-[60vw]">
       <section className="card w-1/2">
-        <h1 className="text-center mb-8 text-C31327A">Log In</h1>
+        <h1 className="text-center mb-8 text-C31327A">Sign Up</h1>
         <Form.Root className="">
+          <Form.Field className="grid mb-[10px]" name="email">
+            <div className="flex items-baseline justify-between w-full">
+              <Form.Label className="text-[15px] font-medium leading-[35px] text-C31327A">
+                Name
+              </Form.Label>
+              <Form.Message
+                className="text-[13px] text-C31327A opacity-[0.8]"
+                match="valueMissing"
+              >
+                Please enter your name
+              </Form.Message>
+              <Form.Message
+                className="text-[13px] text-C31327A opacity-[0.8]"
+                match="typeMismatch"
+              >
+                Please provide a valid name
+              </Form.Message>
+            </div>
+            <Form.Control asChild>
+              <input
+                required
+                type="text"
+                value={username}
+                onChange={(e) => setUsername(e.target.value)}
+                className="box-border w-full bg-blackA5 shadow-blackA9 inline-flex h-[35px] appearance-none items-center justify-center rounded-[4px] px-[10px] text-[15px] leading-none text-C31327A shadow-[0_0_0_1px] outline-none hover:shadow-[0_0_0_1px_black] focus:shadow-[0_0_0_2px_black] selection:color-white selection:bg-blackA9"
+              />
+            </Form.Control>
+          </Form.Field>
           <Form.Field className="grid mb-[10px]" name="email">
             <div className="flex items-baseline justify-between w-full">
               <Form.Label className="text-[15px] font-medium leading-[35px] text-C31327A">
@@ -39,7 +66,8 @@ const Login: NextPage = () => {
               <input
                 required
                 type="email"
-                onChange={(e) => setUsername(e.target.value)}
+                value={mail}
+                onChange={(e) => setMail(e.target.value)}
                 className="box-border w-full bg-blackA5 shadow-blackA9 inline-flex h-[35px] appearance-none items-center justify-center rounded-[4px] px-[10px] text-[15px] leading-none text-C31327A shadow-[0_0_0_1px] outline-none hover:shadow-[0_0_0_1px_black] focus:shadow-[0_0_0_2px_black] selection:color-white selection:bg-blackA9"
               />
             </Form.Control>
@@ -76,4 +104,4 @@ const Login: NextPage = () => {
   );
 };
 
-export default Login;
+export default Signup;

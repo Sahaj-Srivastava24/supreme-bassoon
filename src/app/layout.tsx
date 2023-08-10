@@ -6,7 +6,7 @@ import cn from '@/lib/utils/tw-merge';
 
 import '@/lib/styles/globals.css';
 
-const APP_NAME = 'nextarter-tailwind';
+const APP_NAME = 'DROP | Resume Parser';
 
 export const metadata: Metadata = {
   title: APP_NAME,

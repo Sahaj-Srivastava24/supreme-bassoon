@@ -4,7 +4,7 @@
   "private": true,
   "author": "mad1ad",
   "scripts": {
-    "dev": "next dev",
+    "dev": "next dev -p 1414",
     "build": "next build",
     "build:turbo": "npx turbo build",
     "postbuild": "next-sitemap --config next-sitemap.config.js",
@@ -22,9 +22,14 @@
     "prepare": "husky install"
   },
   "dependencies": {
+    "@radix-ui/colors": "^2.0.1",
+    "@radix-ui/react-accordion": "^1.1.2",
+    "@radix-ui/react-form": "^0.0.3",
+    "@radix-ui/react-separator": "^1.0.3",
     "@radix-ui/react-slot": "^1.0.2",
     "@uploadthing/react": "^5.2.1",
     "class-variance-authority": "^0.6.1",
+    "classnames": "^2.3.2",
     "clsx": "^2.0.0",
     "lucide-react": "^0.260.0",
     "next": "^13.4.10",
