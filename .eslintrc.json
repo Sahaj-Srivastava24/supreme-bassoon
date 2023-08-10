@@ -1,6 +1,13 @@
 {
+  "parserOptions": {
+    "ecmaVersion": "latest"
+  },
+
+  "env": {
+    "es6": true
+  },
   "extends": [
-    "sznm/react",
+    // "sznm/react",
     "plugin:react/jsx-runtime",
     "plugin:@next/next/recommended"
   ]
