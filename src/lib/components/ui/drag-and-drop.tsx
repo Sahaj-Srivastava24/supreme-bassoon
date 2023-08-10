@@ -37,7 +37,7 @@ const DragAndDrop = () => {
       console.log('uploaded successfully!');
       if (!!file && file.length > 0) {
         console.log(file[0].url);
-        postUrlToFlaskServer(file[0].url);
+        // postUrlToFlaskServer(file[0].url);
       }
 
       setOpenToast(true);

@@ -6,22 +6,19 @@ import * as Form from '@radix-ui/react-form';
 import { useRouter } from 'next/navigation';
 import Toast from '@/lib/components/ui/toast';
 import { login } from '@/lib/utils/user-data';
+import { userStore } from '@/lib/store/user';
 
 const Login: NextPage = () => {
   const [openToast, setOpenToast] = useState(false);
+  const { isLoggedIn, setLogin } = userStore();
   const router = useRouter();
   const [password, setPassword] = useState('');
   const [mail, setMail] = useState('');
 
   const handleSubmit = () => {
-    login(mail, password)
-      .then((res) => {
-        console.log(res);
-        router.push('/');
-      })
-      .catch((e) => {
-        console.log(e);
-      });
+    console.log('submit ran');
+    login(mail, password);
+    setLogin(true);
   };
 
   return (
