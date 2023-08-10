@@ -10,7 +10,7 @@ import { userStore } from '@/lib/store/user';
 
 const Login: NextPage = () => {
   const [openToast, setOpenToast] = useState(false);
-  const { isLoggedIn, setLogin } = userStore();
+  const { setLogin } = userStore();
   const router = useRouter();
   const [password, setPassword] = useState('');
   const [mail, setMail] = useState('');
@@ -19,6 +19,8 @@ const Login: NextPage = () => {
     console.log('submit ran');
     login(mail, password);
     setLogin(true);
+    window.location.href = 'localhost:8501';
+    // router.push('/')
   };
 
   return (
@@ -30,7 +32,7 @@ const Login: NextPage = () => {
       />
       <section className="card w-1/2">
         <h1 className="text-center mb-8 text-C31327A">Log In</h1>
-        <Form.Root className="">
+        <Form.Root className="" action="none">
           <Form.Field className="grid mb-[10px]" name="email">
             <div className="flex items-baseline justify-between w-full">
               <Form.Label className="text-[15px] font-medium leading-[35px] text-C31327A">

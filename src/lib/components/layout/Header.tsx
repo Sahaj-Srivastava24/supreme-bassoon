@@ -13,7 +13,7 @@ const Header = () => {
         <Link href="/">
           <div className="flex gap-4">
             <Logo />
-            <p className="font-bold text-xl">DROP</p>
+            <p className="font-bold text-xl">HireAI</p>
           </div>
         </Link>
 
