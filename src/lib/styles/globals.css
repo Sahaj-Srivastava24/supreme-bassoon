@@ -2,12 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-@import url('https://fonts.cdnfonts.com/css/visby');
-
-.font-visby {
-  font-family: 'Visby', sans-serif;
-}
-
 @layer base {
   h1 {
     @apply text-4xl font-bold md:text-5xl;

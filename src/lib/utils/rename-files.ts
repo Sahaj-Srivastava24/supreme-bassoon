@@ -1,14 +1,14 @@
 import crypto from 'crypto';
 
-const renameFiles = (files: File[]) =>
-  files.map((originalFile) => {
-    const newFileName = `file_${generateShortHash(originalFile.name)}.pdf`;
-    const blob = new Blob([originalFile], { type: originalFile.type });
-    const renamedFile = new File([blob], newFileName, {
-      type: originalFile.type,
-    });
-    return renamedFile;
+const renameFiles = (originalFile: File) => {
+  if (!originalFile) return null;
+  const newFileName = `file_${generateShortHash(originalFile.name)}.pdf`;
+  const blob = new Blob([originalFile], { type: originalFile.type });
+  const renamedFile = new File([blob], newFileName, {
+    type: originalFile.type,
   });
+  return renamedFile;
+};
 
 function generateShortHash(input: string): string {
   const hash = crypto.createHash('md5').update(input).digest('hex');

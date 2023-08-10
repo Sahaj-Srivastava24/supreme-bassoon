@@ -14,7 +14,9 @@ const Header = () => {
 
         <div>
           <ul className="list-none flex space-x-5">
-            <li className="mx-3 my-2">Leaderboard</li>
+            <li className="mx-3 my-2">
+              <Link href="/leaderboard">Leaderboard</Link>
+            </li>
           </ul>
         </div>
 
