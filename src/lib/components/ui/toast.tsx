@@ -3,10 +3,11 @@ import { Dispatch, SetStateAction } from 'react';
 
 type ToastProps = {
   open: boolean;
+  text: string;
   setOpen: Dispatch<SetStateAction<boolean>>;
 };
 
-const SuccessToast = ({ open, setOpen }: ToastProps) => {
+const SuccessToast = ({ open, text, setOpen }: ToastProps) => {
   return (
     <Toast.Provider swipeDirection="right">
       <Toast.Root
@@ -15,7 +16,7 @@ const SuccessToast = ({ open, setOpen }: ToastProps) => {
         onOpenChange={setOpen}
       >
         <Toast.Title className="[grid-area:_title] mb-[5px] font-medium text-slate12 text-[15px]">
-          Your file has been uploaded
+          {text}
         </Toast.Title>
 
         <Toast.Action

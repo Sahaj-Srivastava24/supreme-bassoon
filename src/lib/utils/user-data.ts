@@ -6,8 +6,8 @@ interface User {
 
 const userDatabase: User[] = [
   {
-    username: 'user123',
-    email: 'user123@example.com',
+    username: 'admin123',
+    email: 'admin123@example.com',
     password: 'password123',
   },
   {
@@ -22,7 +22,7 @@ const userDatabase: User[] = [
   },
 ]; // This will simulate your user database
 
-function signUp(newUser: User): Promise<void> {
+export function signUp(newUser: User): Promise<void> {
   return new Promise((resolve, reject) => {
     setTimeout(() => {
       userDatabase.push(newUser);
@@ -31,7 +31,7 @@ function signUp(newUser: User): Promise<void> {
   });
 }
 
-function login(email: string, password: string): Promise<boolean> {
+export function login(email: string, password: string): Promise<boolean> {
   return new Promise((resolve, reject) => {
     setTimeout(() => {
       const user = userDatabase.find(

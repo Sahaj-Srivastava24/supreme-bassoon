@@ -5,6 +5,7 @@ import { useUploadThing } from '@/lib/utils/upload-thing';
 import { useCallback, useState } from 'react';
 import renameFiles from '@/lib/utils/rename-files';
 import SuccessToast from './toast';
+import { postUrlToFlaskServer } from '@/lib/api/postResumeURL';
 
 const DragAndDrop = () => {
   // states
@@ -33,8 +34,12 @@ const DragAndDrop = () => {
 
   const { isUploading, startUpload } = useUploadThing('pdfUploader', {
     onClientUploadComplete: (file) => {
-      console.log(file);
       console.log('uploaded successfully!');
+      if (!!file && file.length > 0) {
+        console.log(file[0].url);
+        postUrlToFlaskServer(file[0].url);
+      }
+
       setOpenToast(true);
       setFile(null);
       setRedo(true);
@@ -60,7 +65,11 @@ const DragAndDrop = () => {
 
   return (
     <>
-      <SuccessToast open={openToast} setOpen={setOpenToast} />
+      <SuccessToast
+        text="Your file has been uploaded"
+        open={openToast}
+        setOpen={setOpenToast}
+      />
       <div {...getRootProps()}>
         <input {...getInputProps()} />
 
